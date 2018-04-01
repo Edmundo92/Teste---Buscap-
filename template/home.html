@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscápe</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="">
+            <h1 class="logo">
+                <img src="./img/buscape.png" alt="" class="img_logo">
+            </h1>
+            <span class="menuH">
+            <span class="num_products">12</span>
+            </span>
+        </div>
+        <div class="clearfix"></div>
+        <div class="box_search">
+            <input type="search" class="search" placeholder="Digite o produto, marca ou ...">
+        </div>
+    </header>
+    <div class="show_products">
+        <div class="box_show-prod">
+            <div class="product">
+                <img class="product_img" src="./img/tv.jpg" alt="">
+                <div class="box_product_inf">
+                    <div class="product_inf">
+                        <span class="inf_title">Smart TV Samsung Série 4</span>
+                        <span class="inf_subtitle">UN32J4300AG 32 polegadas LED Plana</span>
+                    </div>
+                    <div class="product_price">
+                        <span class="inf_title">10x R$ 134,11</span>
+                        <span class="inf_subtitle">ou R$ 1.139,90 à vista</span>
+                    </div>
+                </div>
+                <div class="remove_product">X</div>
+            </div>
+        </div>
+        <div class="box_total-price">
+            <span class="align_right inf_title">subtotal</span>
+            <hr>
+            <span class="align_right inf_subtitle">10x R$ 433,89</span>
+            <span class="align_right inf_subtitle">ou R$ 4.338,90 à vista</span>
+        </div>
+    </div>
+    
+    <div class="box_slide"></div>
+
+    <main class="main">
+
+        <section class="content_product">
+            <div class="content_galeria">
+                <img src="./img/tv.jpg" alt="" class="content_img">
+            </div>
+            <div class="content_inf">
+                <div class="">
+                    <span class="inf_subtitle">Smart TV Samsung Série 4</span>
+                    <span class="inf_subtitle">UN32J4300AG 32 polegadas</span>
+                    <span class="inf_subtitle">LED Plana</span>
+                </div>
+                <div class="box_about_price">
+                    <div class="">
+                        <span class="indic_price">MELHOR PREÇO</span>
+                        <span class="inf_subtitle price_parcel">10x R$ <strong>366,56</strong></span>
+                        <span class="inf_title price_vista">R$ 3.199,00 à vista</span>
+                    </div>
+                    <div class="">
+                        <button class="add_cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+    
+        var prod = fetch('../datab.json');
+        console.log(prod);
+        prod
+        .then(data => data.json())
+        .then(data => {
+            data.items.map( d => console.log(d.product.name))
+        });
+        
+    </script>
+</body>
+</html>
